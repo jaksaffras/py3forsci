@@ -9,16 +9,22 @@ API_KEY = 'b619b55d-faa3-442b-a119-dd906adc79c8' # <2>
 def main(args):
     if len(args) < 1:
         print("Please specify a search term")
-        sys.exit(1)
+        sys.exit(1)  # quit program
 
     response = requests.get(
         BASE_URL + args[0],
-        params={'key': API_KEY},
+        params={'key': API_KEY},  # GET parameter
         # ssl, proxy, cookies, headers, etc.
     )  # <3>
 
     if response.status_code == requests.codes.OK:  # 200?
         data = response.json()  # <4>
+        print("RAW DATA")
+        print('-' * 60)
+        print('-' * 60)
+        print(response.text)
+        print('-' * 60)
+        print('-' * 60)
         for entry in data: # <5>
             if isinstance(entry, dict):
                 meta = entry.get("meta")

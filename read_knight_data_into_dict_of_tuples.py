@@ -1,19 +1,34 @@
 from pprint import pprint
 
-knight_data = {}
+def main():
+    d = read_data()
+    pretty_print(d)
+    print()
+    print_knight_info(d)
+    print()
+    print(get_attribute(d, 'Lancelot', 2))
+    print(get_attribute(d, 'Galahad', 3))
 
-with open('DATA/knights.txt') as knights_in:
-    for raw_line in knights_in:
-        line = raw_line.rstrip()
-        name, title, color, quest, comment = line.split(':')
-        knight_data[name] = title, color, quest, comment
+def read_data():
+    knight_data = {}
 
-pprint(knight_data)
-print()
+    with open('DATA/knights.txt') as knights_in:
+        for raw_line in knights_in:
+            line = raw_line.rstrip()
+            name, title, color, quest, comment = line.split(':')
+            knight_data[name] = title, color, quest, comment
+    return knight_data
 
-for knight_name, knight_info in knight_data.items():
-    # print(knight_name, knight_info)
-    print(f"{knight_info[0]:4s} {knight_name:8s} {knight_info[1]}")
+def pretty_print(data):
+    pprint(data)
 
-print("knight_data['Robin'][1]: {}".format(knight_data['Robin'][1]))
-print("knight_data['Galahad'][2]: {}".format(knight_data['Galahad'][2]))
+def print_knight_info(data):
+    for knight_name, knight_info in data.items():
+        # print(knight_name, knight_info)
+        print(f"{knight_info[0]:4s} {knight_name:8s} {knight_info[1]}")
+
+def get_attribute(data, knight, field):
+    return data[knight][field]
+
+
+main()

@@ -13,7 +13,7 @@ books = [
 ]
 
 
-def strip_articles(title):  # <.>
+def strip_article(title):  # <.>
     title = title.lower()
     for article in 'a ', 'an ', 'the ':
         if title.startswith(article):
@@ -22,5 +22,5 @@ def strip_articles(title):  # <.>
     return title
 
 
-for book in sorted(books, key=strip_articles):  # <.>
+for book in sorted(books, key=strip_article):  # <.>
     print(book)

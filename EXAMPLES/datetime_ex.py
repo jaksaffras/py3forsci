@@ -5,6 +5,7 @@ from datetime import datetime, date, timedelta
 today = date.today()
 print("today:", today)  # <1>
 print("type(today): {}".format(type(today)))
+print("isinstance(today, date): {}".format(isinstance(today, date)))
 print("today.month: {}".format(today.month))
 print("today.day: {}".format(today.day))
 print("today.year: {}".format(today.year))
@@ -47,3 +48,12 @@ t3 = t2 - t1
 print("datetime(2016, 8, 24, 10, 4, 34):", t1)
 print("datetime(2018, 8, 24, 22, 8, 1):", t2)
 print("time diff (t2 - t1):", t3)
+
+print(today)
+print(today.strftime('%d %m %y'))
+print(today.strftime('%m/%d/%Y'))
+print(today.strftime('%B %Y'))
+
+x = today
+print(x.strftime("%m %Y"))
+
