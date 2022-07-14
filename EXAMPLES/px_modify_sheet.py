@@ -14,7 +14,7 @@ def main():
 
 
 def make_date(date_str):
-    """Convert date string returned by CELL.value into Python date object"""
+    """Convert date string in the format "YYYY-MM-DD" returned by CELL.value into Python date object"""
     year, month, day = date_str.split('-')
     return date(int(year), int(month), int(day))
 

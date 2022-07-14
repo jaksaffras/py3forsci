@@ -18,7 +18,7 @@ df = pd.DataFrame(values, index=index, columns=cols)  # <4>
 print_header('DataFrame df')
 print(df, '\n')
 
-print_header("df['alpha']")
+print_header("df['alpha']")  # df.alpha
 print(df['alpha'], '\n')  # <5>
 
 print_header("df.beta")

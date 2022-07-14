@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import numpy as np
 
-r1 = np.arange(50)  # <1>
+r1 = np.arange(50)  # <1>   np.arange(start)  np.arange(start, stop)  np.arange(start, stop, step)
 print(r1)
 print("size is", r1.size)  # <2>
 print()

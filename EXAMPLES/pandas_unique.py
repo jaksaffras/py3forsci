@@ -1,10 +1,11 @@
 import pandas as pd
 
 df = pd.read_excel('http://qrc.depaul.edu/Excel_Files/Presidents.xlsx', sheet_name='Master',
-                  na_values='NA()')
-df.index = range(1,len(df)+1)
+                  na_values='NA()', index_col=0)
 
-# print(df.head())
+print(df.head())
+print()
+
 parties = df['Political Party'].value_counts()
 print(parties)
 # parties.plot(kind='bar')
